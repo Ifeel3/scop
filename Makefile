@@ -32,7 +32,7 @@ endif
 
 $(NAME): compile
 	@echo Execute...
-	@$(JAVA) -jar $(NAME)
+	@$(JAVA) -jar $(NAME).jar
 
 jdk-17.0.3.1:
 	@echo Downloading JDK...
