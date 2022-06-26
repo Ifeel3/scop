@@ -1,4 +1,4 @@
-NAME	= scop
+NAME	= scop.jar
 JDK		= jdk-17.0.3.1/bin
 JAVA	= $(JDK)/java
 JAVAC	= $(JDK)/javac
@@ -24,15 +24,15 @@ all: $(NAME)
 compile: jdk-17.0.3.1 $(OBJ)
 	@echo Compile...
 ifeq ($(UNAME), Linux)
-	@cd target && ../$(JAR) -cfm ../$(NAME).jar ../src/main/java/Manifest-linux.mf *
+	@cd target && ../$(JAR) -cfm ../$(NAME) ../src/main/java/Manifest-linux.mf *
 endif
 ifeq ($(UNAME), Darwin)
-	@cd target && ../$(JAR) -cfm ../$(NAME).jar ../src/main/java/Manifest-macOS.mf *
+	@cd target && ../$(JAR) -cfm ../$(NAME) ../src/main/java/Manifest-macOS.mf *
 endif
 
 $(NAME): compile
 	@echo Execute...
-	@$(JAVA) -jar $(NAME).jar
+	@$(JAVA) -jar $(NAME)
 
 jdk-17.0.3.1:
 	@echo Downloading JDK...
